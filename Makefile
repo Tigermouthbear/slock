@@ -6,6 +6,9 @@ include config.mk
 SRC = slock.c ${COMPATSRC}
 OBJ = ${SRC:.c=.o}
 
+DESTDIR = /usr
+PREFIX =
+
 all: options slock
 
 options:

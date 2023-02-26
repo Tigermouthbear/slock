@@ -2,6 +2,24 @@ slock - simple screen locker
 ============================
 simple screen locker utility for X.
 
+## Enable systemd service
+Copy file slock@.service to /etc/systemd/system/
+Enable slock@user systemd service
+
+
+## Add to Xorg config
+-----------
+```
+### Block TTY access
+Section "ServerFlags"
+    Option "DontVTSwitch" "True"
+EndSection
+
+### Prevent a user from killing X
+Section "ServerFlags"
+    Option "DontZap"      "True"
+EndSection
+```
 
 Requirements
 ------------
